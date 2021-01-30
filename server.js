@@ -18,7 +18,7 @@ var fishRecipe = [
     { 'id': "0004",
               'text':"Ginger"}]
 
-app.get("/", function(resquest,response){
+app.get("/fr", function(resquest,response){
     response.send(fishRecipe)
 })
 

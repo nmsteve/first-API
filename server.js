@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser'
 import express from 'express'
 var app = express()
+const PORT = process.env.PORT || 5000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
@@ -18,7 +19,7 @@ var fishRecipe = [
     { 'id': "0004",
               'text':"Ginger"}]
 
-app.get("/", function(resquest,response){
+app.get('/', function(resquest,response){
     response.send(fishRecipe)
 })
 
@@ -70,6 +71,6 @@ app.post('/', function(request, response) {
 
    })
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("First API running on port 3000")
 })
